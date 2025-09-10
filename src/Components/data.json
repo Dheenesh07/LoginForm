@@ -1,0 +1,7 @@
+{
+    "users":[
+    {"name":"Dheenesh","password":"dhee@123"},
+    {"name":"Murugan","password":"murugan@456"},
+    {"name":"Nithest","password":"nithesh@789"}
+    ]
+}
