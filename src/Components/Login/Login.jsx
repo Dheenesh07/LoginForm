@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import usersData from "../Data.json";
-import Home from "../Home/Home";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -11,13 +10,14 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     const user = usersData.users.find(
       (u) => u.name === username && u.password === password
     );
 
     if (user) {
-        navigate("/home", { state: { username } });
+      // pass username to Home page
+      navigate("/home", { state: { username } });
     } else {
       setError("❌ Invalid username or password. Try again.");
     }
@@ -51,4 +51,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;

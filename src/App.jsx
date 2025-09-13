@@ -7,7 +7,8 @@ import Login from "./Components/Login/Login";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/LoginForm">
+
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />

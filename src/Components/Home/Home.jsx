@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  const location = useLocation();   
+  const location = useLocation();
   const username = location.state?.username || "Guest";
 
   return (
@@ -14,10 +14,17 @@ function Home() {
         corrupti nisi alias earum possimus exercitationem fugit consectetur
         iusto.
       </p>
-      <button onClick={() => navigate("/about")} style={styles.button}>
+      <button
+        onClick={() => navigate("/about", { state: { username } })}
+        style={styles.button}
+      >
         About Me 👑
       </button>
-      <button onClick={() => navigate("/contact")} style={styles.button}>
+
+      <button
+        onClick={() => navigate("/contact", { state: { username } })}
+        style={styles.button}
+      >
         Contact Me ☎
       </button>
     </div>
